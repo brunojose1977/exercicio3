@@ -1,0 +1,5 @@
+### Localização da pasta dos HTMLs
+/usr/share/nginx/html
+
+### Configuração do nginx
+/etc/nginx/nginx.conf

@@ -4,6 +4,7 @@ build
 
 # Arquivos
 TOKEN-GITHUB
+DOCKERHUB-LOGIN
 
 # Arquivos de ambiente
 .env

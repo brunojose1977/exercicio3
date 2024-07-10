@@ -3,10 +3,6 @@ node_modules
 build
 
 # Arquivos
-package-lock.json
-yarn.lock
-Dockerfile
-docker-compose.yml
 TOKEN-GITHUB
 
 # Arquivos de ambiente

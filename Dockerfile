@@ -3,6 +3,7 @@ WORKDIR /app
 
 RUN apt update -y
 RUN apt-get update -y
+RUN apt-get update --fix-missing
 RUN apt-get install -y tree
 RUN apt-get install -y curl
 RUN apt-get install -y nano
@@ -20,5 +21,5 @@ COPY descompactar-app-conteiner.sh .
 # Agora rodar o o script de descompactação
 RUN ./descompactar-app-conteiner.sh
 
-ENTRYPOINT service nginx start && npm run start && sleep 10d 
+ENTRYPOINT service nginx start && cd /usr/share/nginx/html/site-reactjs/ && npm run start && sleep 10d 
 #ENTRYPOINT sleep 10d

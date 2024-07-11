@@ -1,4 +1,6 @@
 FROM ubuntu
+WORKDIR /app
+
 RUN apt update -y
 RUN apt-get update -y
 RUN apt-get install -y tree
@@ -6,12 +8,17 @@ RUN apt-get install -y curl
 RUN apt-get install -y nano
 RUN apt-get install -y nginx
 RUN apt install -y npm
-#RUN tar czf sitehtml5.tar.gz ./sitehtml5/
-COPY sitehtml5.tar.gz /usr/share/nginx/html 
-RUN cd /usr/share/nginx/html
-#RUN tar xzf sitehtml5.tar.gz .
-#RUN rm sitehtml5.tar.gz .
-#RUN npm i startbootstrap-one-page-wonder
-#RUN npm run build 
-#ENTRYPOINT service nginx start && npm run start && sleep 10d 
-ENTRYPOINT sleep 10d
+
+# Pré-requsito para a execução da imagem:
+# Antes da execução do comando "docker build" que vai executar o Dockerfile, vc precisa rodar o script de compactação "compactar-app-host.sh".
+# Esse script vai gerar o arquivo: aplicacao.tar.gz 
+
+# Agora vou copiar o arquivo compactado do site React.js e o script shell de descompactação e instalação da aplicação
+COPY aplicacao.tar.gz .
+COPY descompactar-app-conteiner.sh .
+
+# Agora rodar o o script de descompactação
+RUN ./descompactar-app-conteiner.sh
+
+ENTRYPOINT service nginx start && npm run start && sleep 10d 
+#ENTRYPOINT sleep 10d

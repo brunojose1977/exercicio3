@@ -5,6 +5,7 @@ build
 # Arquivos
 TOKEN-GITHUB
 DOCKERHUB-LOGIN
+aplicacao.tar.gz
 
 # Arquivos de ambiente
 .env

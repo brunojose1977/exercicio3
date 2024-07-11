@@ -27,9 +27,9 @@ ls -la $nome_arquivo_compactado
 echo " "
 echo "iniciaremos agora o build da imagem docker (brunojose1977/exercicio2:1.1)"
 sleep 5
-sudo docker build -t brunojose1977/exercicio2:1.1 .
+sudo docker build -t brunojose1977/exercicio3:1.1 .
 echo " "
 echo "Abram um novo terminal e experimente criar um conteiner para essa imagem com o comando: "
 echo " "
-echo "sudo docker run --name exercicio2 -p 5000:3000 brunojose1977/exercicio2:1.1"
+echo "sudo docker run --name exercicio2 -p 5000:3000 brunojose1977/exercicio3:1.1"
 echo " "
